@@ -9,7 +9,7 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface BDValue {
-
+    /** alias name */
     String name() default "";
 
     /** apply to type is String'property {@link com.answer.bdframework.entity.BDType#String} set up default value */
