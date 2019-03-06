@@ -1,0 +1,48 @@
+/**
+ * https://spring.io/guides/gs/rest-service/
+ * */
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.5.RELEASE")
+    }
+
+}
+
+ext {
+    commonsIOVersion = '2.6'
+    fastJsonVersion = '1.2.47'
+}
+
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+bootJar {
+    baseName = 'aal-gb-framework'
+    version =  '0.0.1-SNAPSHOT'
+}
+
+repositories {
+//    mavenCentral()
+
+    maven {url 'http://maven.aliyun.com/nexus/content/groups/public'}
+}
+
+group = 'com.answer'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.apache.commons:commons-lang3")
+    compile("commons-io:commons-io:${commonsIOVersion}")
+    compile("com.alibaba:fastjson:${fastJsonVersion}")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}

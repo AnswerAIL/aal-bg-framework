@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<sqlTexts name="templateMapper">
+
+    <sql id="orderSelect1">
+        order_no, order_amt, order_status, valid, card_no, physic_no, create_time, update_time
+    </sql>
+
+    <sql id="orderSelect2">
+        order_no, order_amt, order_status, valid, create_time, update_time
+    </sql>
+
+
+
+    <!-- 查找所有订单记录 -->
+    <sqlText id="findOrderList" referId="orderSelect1">
+        select @{PLACEHOLDER}
+        from ai_order_detail
+        where valid = 1
+        order by order_no
+    </sqlText>
+
+    <!-- 根据订单号查找订单记录 -->
+    <sqlText id="findOrderByOrderNo" referId="orderSelect2">
+        select @{PLACEHOLDER}
+        from ai_order_detail
+        where valid = 1 and order_status &gt;= 11 and order_no = #{orderNo}
+    </sqlText>
+
+    <!-- 根据多条件筛选查找订单信息 -->
+    <sqlText id="findOrderByParams">
+        <![CDATA[
+            select *
+            from ai_order_detail
+            where create_time >= #{createTime} and card_no = #{cardNo} and status = ${status}
+        ]]>
+    </sqlText>
+
+</sqlTexts>

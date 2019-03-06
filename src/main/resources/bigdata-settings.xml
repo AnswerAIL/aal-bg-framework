@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 加载大数据应用配置模板文件 -->
+<settings>
+
+    <setting name="orderCount" value="10" type="java.lang.Integer" />
+
+    <setting name="orderAmt" value="0.4" type="java.lang.Float" />
+
+    <setting name="rho_val" value="0.4" type="java.lang.String" />
+
+    <setting name="company" value="{name:'aal',base:'shenzhen'}" type="java.util.Map" />
+
+    <setting name="http" value="http://www.aal.com,http://www.ai.com" type="java.util.List" />
+
+    <setting name="mysql_ai_db" value="jdbc://localhost:3306/answer" />
+
+    <setting name="hive_user_name" value="answer" type="java.lang.String" />
+
+    <setting name="hive_passwd" value="123456" type="java.lang.String" />
+
+    <setting name="hive_db_url" value="jdbc://localhost:3306/card" type="java.lang.String" />
+
+
+
+    <setting name="api_context" value="http://127.0.0.1:8098/aal-bg-framework" />
+    <setting name="mysql_url" value="jdbc:mysql://127.0.0.1:3306/" />
+    <setting name="mysql_db" value="answer" />
+    <setting name="mysql_aal_db" value="aal" />
+    <setting name="mysql_username" value="root" />
+    <setting name="mysql_password" value="0KHTc9Fhy53PPONproFVnQ==" salt="RsSXHOzonZnjo8lDwZ5NtQaP" />
+    <setting name="mysql_driver" value="com.mysql.jdbc.Driver" />
+
+    <setting name="rho" value="0.4" type="java.lang.Float" />
+    <setting name="alpha" value="0.5" type="java.lang.Float" />
+
+</settings>
