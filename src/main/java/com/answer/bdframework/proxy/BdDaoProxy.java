@@ -33,11 +33,9 @@ public class BdDaoProxy implements InvocationHandler {
 
 
         String sql = SQLContainer.getSqlText(String.format("%s.%s", className, methodName));
-        if (true) {
-            return sql;
-        }
 
         // TODO Answer.AI.L 执行 sql 语句并将结果返回(包括预编译及对结果进行解析封装)
+        System.out.println(String.format("methodName[%s] execute sql[%s].", methodName, sql));
 
         if (INSERT.getName().equals(methodName) ||
                 DELETE.getName().equals(methodName) ||
@@ -47,6 +45,8 @@ public class BdDaoProxy implements InvocationHandler {
             result = String.format("%s-%s", methodName, args[0]);
         } else if (SELECT_MANY.getName().equals(methodName)) {
             result = Collections.singletonList(String.format("%s-%s", methodName, args[0]));
+        } else {
+            result = methodName + "-执行结果:...";
         }
 
         return result;

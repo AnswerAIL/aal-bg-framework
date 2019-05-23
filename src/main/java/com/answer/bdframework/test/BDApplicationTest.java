@@ -32,7 +32,7 @@ public class BDApplicationTest {
 
         System.out.println("========================================================================");
 
-        // TODO 添加注解进行注入
+        // TODO 添加注解进行注入 @MapperScan or @Mapper
         BdDaoProxy proxy = new BdDaoProxy();
         BdProxyInstance instance = new BdProxyInstance<>(OrderDao.class);
         OrderDao dao = (OrderDao) instance.newInstance(proxy);
